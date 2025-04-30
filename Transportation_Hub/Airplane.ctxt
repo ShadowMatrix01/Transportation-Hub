@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Airplane
+comment1.params=manufacturer\ captain\ copilot\ route\ condition
+comment1.target=void\ setStringDescriptors(java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String)
+comment2.params=fuel\ capacity\ airRegistration
+comment2.target=void\ setIntegerDescriptors(int,\ int,\ int)
+comment3.params=capacity_two
+comment3.target=int\ lunchService(int)
+comment4.params=
+comment4.target=java.lang.String\ toString()
+numComments=5
