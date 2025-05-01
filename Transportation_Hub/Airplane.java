@@ -2,8 +2,8 @@
  
 /**
  * Author: Jhan Gomez
- * Date: 4/30/25
- * Version 1.0
+ * Date: 5/1/25
+ * Version 1.0.1
  * Purpose: To show a program that utilizes stacks, queues, linkedlists, sorting algorithms,
  * inheritance, polymorphism, interfaces, abstract methods, recursion, exceptions, and collections.
  */
@@ -25,7 +25,7 @@ public class Airplane extends Hub implements Transport
         this.fuel=fuel;
         this.capacity=capacity;
         this.airRegistration=airRegistration;
-        lunchService(capacity);
+        //lunchService(capacity);
     }
     public int lunchService(int capacity_two) {
         System.out.print("Passenger #" + capacity_two + " was served their meal! ");
