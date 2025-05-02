@@ -2,8 +2,8 @@
  
 /**
  * Author: Jhan Gomez
- * Date: 5/1/25
- * Version 1.0.1
+ * Date: 5/2/25
+ * Version 1.0.2
  * Purpose: To show a program that utilizes stacks, queues, linkedlists, sorting algorithms,
  * inheritance, polymorphism, interfaces, abstract methods, recursion, exceptions, and collections.
  */
@@ -29,6 +29,10 @@ public class Airplane extends Hub implements Transport
     }
     public int lunchService(int capacity_two) {
         System.out.print("Passenger #" + capacity_two + " was served their meal! ");
+        if (capacity_two < 1) {
+            System.out.println("There are no passengers on the plane to serve food to");
+            return 1;
+        }
         if (capacity_two==1) {
             System.out.println("\nThe person in the front of the aircraft was served lunch and drinks!");
             return 1;
@@ -40,7 +44,7 @@ public class Airplane extends Hub implements Transport
     @Override
     public String toString() {
         return "\n\nManufacturer: " + manufacturer + "." + "\nCondition: " + condition + "." 
-        + "\nRegistration Number: " + airRegistration + "." + "\nFuel: "  + fuel + "." + "\nRoute: " + route + "." 
+        + "\nRegistration Number: " + airRegistration + "." + "\nFuel: "  + fuel + " gallons of JetFuel/AVGAS." + "\nRoute: " + route + "." 
         + "\nCaptain: " + captain + "."+ "\nCopilot: " + copilot + "." + "\nSouls on Board: " + capacity + ".";
     }
 }

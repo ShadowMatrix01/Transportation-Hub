@@ -1,8 +1,8 @@
 
 /**
  * Author: Jhan Gomez
- * Date: 5/1/25
- * Version 1.0.1
+ * Date: 5/2/25
+ * Version 1.0.2
  * Purpose: To show a program that utilizes stacks, queues, linkedlists, sorting algorithms,
  * inheritance, polymorphism, interfaces, abstract methods, recursion, exceptions, and collections.
  */
