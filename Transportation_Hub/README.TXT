@@ -1,12 +1,6 @@
-------------------------------------------------------------------------
-This is the project README file. Here, you should describe your project.
-Tell the reader (someone who does not know anything about this project)
-all they need to know. The comments should usually include at least:
-------------------------------------------------------------------------
-
-PROJECT TITLE:
-PURPOSE OF PROJECT:
-VERSION or DATE:
-HOW TO START THIS PROJECT:
-AUTHORS:
-USER INSTRUCTIONS:
+Author: Jhan Gomez
+Date: 5/2/25
+Version 1.0.2
+Purpose: To show a program that utilizes stacks, queues, linkedlists, sorting algorithms,
+inheritance, polymorphism, interfaces, abstract methods, recursion, exceptions, and collections.
+How to run: Either run in command line, or use an IDE and run the main hub file.
