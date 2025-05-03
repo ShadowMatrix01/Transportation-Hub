@@ -4,11 +4,11 @@
 
 <h1>Version 1.0.3
 
-<h1>Purpose:
+<h1>Purpose: 
 
 <h2>To show a program that utilizes stacks, queues, linkedlists, sorting algorithms,
 
-inheritance, polymorphism, interfaces, abstract methods, recursion, exceptions, and collections.
+ inheritance, polymorphism, interfaces, abstract methods, recursion, exceptions, and collections.
 
 <h1> </h1>
 <h1>How to run: 
