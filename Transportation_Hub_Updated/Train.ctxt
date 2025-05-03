@@ -8,4 +8,6 @@ comment3.params=
 comment3.target=java.lang.String\ toString()
 comment4.params=passenger\ trainPassengers
 comment4.target=int\ removePassenger(int,\ java.util.ArrayList)
-numComments=5
+comment5.params=luggage
+comment5.target=java.lang.String\ selectionSortTrainLuggage(java.util.ArrayList)
+numComments=6

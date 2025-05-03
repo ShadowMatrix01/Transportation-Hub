@@ -2,16 +2,17 @@
  
 /**
  * Author: Jhan Gomez
- * Date: 5/2/25
- * Version 1.0.2
- * Purpose: To show a program that utilizes stacks, queues, linkedlists, sorting algorithms,
- * inheritance, polymorphism, interfaces, abstract methods, recursion, exceptions, and collections.
+ * Date: 5/3/25
+ * Version 1.0.3
+ * Purpose: To show a transportation planning program that utilizes stacks, queues, linkedlists, sorting algorithms, arrays,
+ * inheritance, polymorphism, interfaces, abstract methods, recursion, exceptions, hashmaps, switch statements, overriding, overloading,
+ * input, output, import, booleans, and collections.
  */
 import java.util.*;
 public class Airplane extends Hub implements Transport
 {
-    private String manufacturer, captain, copilot, route, condition;
-    private int capacity, fuel, airRegistration;
+    private String manufacturer, captain, copilot, route, condition, temp;
+    private int capacity, fuel, airRegistration, minimum;
     @Override
     public void setStringDescriptors(String manufacturer, String captain, String copilot, String route, String condition) {
        this.manufacturer=manufacturer;
@@ -40,6 +41,22 @@ public class Airplane extends Hub implements Transport
             System.out.print("\n");
         }
         return lunchService(capacity_two - 1);
+    }
+    public String selectionSortAirplaneLuggage(ArrayList<String> luggage) {
+        for (int i=0; i<luggage.size() - 1; i++) {
+            minimum=i;
+            for (int j=i + 1; j<luggage.size() -1; j++) {
+                if (luggage.get(j).compareTo(luggage.get(minimum)) < 0) {
+                    minimum=j;  
+                }
+            }
+            if (minimum!= i) //Important: This checks if minimum is not equal to i, 
+            //if its not, it means a new minimum was found and a swap is ready to be done.
+            { //Start of the if statement.
+            Collections.swap(luggage, i, minimum); //Collections .swap method is called where i and the new minimum are swapped.
+        }
+        }
+        return "Luggage owners has been sorted alphabetically!";
     }
     @Override
     public String toString() {
