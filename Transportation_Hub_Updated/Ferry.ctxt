@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=Ferry
+comment0.text=\r\n\ Author\:\ Jhan\ Gomez\r\n\ Date\:\ 5/2/25\r\n\ Version\ 1.0.2\r\n\ Purpose\:\ To\ show\ a\ program\ that\ utilizes\ stacks,\ queues,\ linkedlists,\ sorting\ algorithms,\r\n\ inheritance,\ polymorphism,\ interfaces,\ abstract\ methods,\ recursion,\ exceptions,\ and\ collections.\r\n
+comment1.params=manufacturer\ captain\ pilot\ route\ condition
+comment1.target=void\ setStringDescriptors(java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String)
+comment2.params=fuel\ capacity\ registration
+comment2.target=void\ setIntegerDescriptors(int,\ int,\ int)
+numComments=3
