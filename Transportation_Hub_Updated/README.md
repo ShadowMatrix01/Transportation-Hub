@@ -33,11 +33,11 @@
 ✔️Method Overriding <br>
 ✔ Method Overloading <br>
 ✔️Booleans <br>
-❌ Swtich Statements <br>
+❌Swtich Statements <br>
 ✔️If-Else Statements <br>
 ✔️Airplane Class <br>
 ✔️Train Class <br>
-❌ Bus Class <br>
-❌ Ferry Class <br>
+❌Bus Class <br>
+❌Ferry Class <br>
 ✔️Main Hub Class <br>
 </h2>
