@@ -2,6 +2,6 @@
 comment0.target=Bus
 comment1.params=manufacturer\ driver\ fare_inspector\ route\ condition
 comment1.target=void\ setStringDescriptors(java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String)
-comment2.params=fuel\ capacity\ airRegistration
+comment2.params=fuel\ capacity\ busLicense
 comment2.target=void\ setIntegerDescriptors(int,\ int,\ int)
 numComments=3

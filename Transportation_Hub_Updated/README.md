@@ -1,8 +1,8 @@
 <h1>Author: Jhan Gomez
 
-<h1>Date: 05/03/25
+<h1>Date: 05/05/25
 
-<h1>Version 1.0.3
+<h1>Version 1.0.4
 
 <h1>Purpose: 
 
@@ -14,7 +14,7 @@
 <h1>How to run: 
 
 <h2>Either run in command line, or use an IDE and run the main hub file.
-<h1> Checklist (05/03/25): </h1>
+<h1> Checklist (05/05/25): </h1>
 <h2> 
 ✔️Input <br>
 ✔️Constructor (Empty) <br>
@@ -31,7 +31,7 @@
 ✔️Interfaces <br>
 ✔️Abstract Methods <br>
 ✔️Method Overriding <br>
-❌ Method Overloading <br>
+✔ Method Overloading <br>
 ✔️Booleans <br>
 ❌ Swtich Statements <br>
 ✔️If-Else Statements <br>
