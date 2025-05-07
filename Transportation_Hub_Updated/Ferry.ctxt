@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.target=Ferry
-comment1.params=manufacturer\ captain\ pilot\ route\ condition
-comment1.target=void\ setStringDescriptors(java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String)
+comment1.params=manufacturer\ captain\ pilot\ route\ condition\ type
+comment1.target=void\ setStringDescriptors(java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String)
 comment2.params=fuel\ capacity\ boatRegistration
 comment2.target=void\ setIntegerDescriptors(int,\ int,\ int)
 comment3.params=

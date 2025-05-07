@@ -1,15 +1,17 @@
 #BlueJ class context
 comment0.target=Airplane
-comment1.params=manufacturer\ captain\ copilot\ route\ condition
-comment1.target=void\ setStringDescriptors(java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String)
+comment1.params=manufacturer\ captain\ copilot\ route\ condition\ type
+comment1.target=void\ setStringDescriptors(java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String)
 comment2.params=fuel\ capacity\ airRegistration
 comment2.target=void\ setIntegerDescriptors(int,\ int,\ int)
 comment3.params=capacity_two
 comment3.target=int\ lunchService(int)
-comment4.params=crew\ time
-comment4.target=void\ lunchService(java.util.ArrayList,\ java.lang.String)
-comment5.params=luggage
-comment5.target=java.lang.String\ selectionSortAirplaneLuggage(java.util.ArrayList)
-comment6.params=
-comment6.target=java.lang.String\ toString()
-numComments=7
+comment4.params=passenger\ airplanePassengers
+comment4.target=int\ removePassenger(int,\ java.util.ArrayList)
+comment5.params=crew\ time
+comment5.target=void\ lunchService(java.util.ArrayList,\ java.lang.String)
+comment6.params=luggage
+comment6.target=java.lang.String\ selectionSortAirplaneLuggage(java.util.ArrayList)
+comment7.params=
+comment7.target=java.lang.String\ toString()
+numComments=8

@@ -10,10 +10,10 @@
 import java.util.*; //Java util package is imported in.
 public class Train extends Hub implements Transport //Class train extends hug and implements transport.
 {   //Start of the class train.
-    private String manufacturer, engineer, conductor, route, condition; //private string objects are made.
+    private String manufacturer, engineer, conductor, route, condition, type; //private string objects are made.
     private int capacity, fuel, journeyNumber, minimum; //private integer object are made.
     @Override //An override is applied to setString descriptors.
-    public void setStringDescriptors(String manufacturer, String engineer, String conductor, String route, String condition) //setStringDescriptors has its parameters formally defined.
+    public void setStringDescriptors(String manufacturer, String engineer, String conductor, String route, String condition, String type) //setStringDescriptors has its parameters formally defined.
     { //Start of the setStringDescriptors method.
        //Start of the setStringDescriptors method.
       this.manufacturer=manufacturer; //Stores the passed in manufacturer as being the object manufacturer.
@@ -21,6 +21,7 @@ public class Train extends Hub implements Transport //Class train extends hug an
       this.conductor=conductor;//Stores the passed in conductor as being the object conductor.
       this.route=route;//Stores the passed in route as being the object route.
       this.condition=condition;//Stores the passed in condition as being the object .
+      this.type=type;//Stores the passed in condition as being the object .
     } //End of the setStringDescriptors method.
     @Override //An overide is applied to the setIntegerDescriptors method.
     public void setIntegerDescriptors(int fuel, int capacity, int journeyNumber) //setIntegerDescriptors is assigned its parameters 
@@ -32,7 +33,7 @@ public class Train extends Hub implements Transport //Class train extends hug an
     @Override //To string method overriden to allow linkedlist and hashmap to work properly.
     public String toString() //toString method declared.
     {//Start of to string method.
-        return "\n\nManufacturer: " + manufacturer + "." + "\nCondition: " + condition + "." 
+        return "\n\nType: " + type +"\nManufacturer: " + manufacturer + "." + "\nCondition: " + condition + "." 
         + "\nJourney Number: " + journeyNumber + "." + "\nFuel: "  + fuel + " gallons of Diesel fuel." + "\nRoute: " + route + "." 
         + "\nEngineer: " + engineer + "."+ "\nConductor: " + conductor + "." + "\nPassengers: " + capacity + ".";
         //The data that was passed in is returned to be added to the linkedlist and hashmap.
@@ -41,7 +42,7 @@ public class Train extends Hub implements Transport //Class train extends hug an
     { //Start of removePassenger method.
        Integer preventer=passenger; //MUST BE CAST AS NONPRIMITVE OTHERWISE WEIRD ERROR WHERE INDEX RATHER THAN VALUE IS REMOVED!
        Random pickReason=new Random(); //A new random object is created.
-       String [] randomReasons={"unruly behavior", "drunkeness", "lack of fare", "refunded ticket", "ban", "incorrect destination", "not knowing about java"};
+       String [] randomReasons={"unruly behavior.", "drunkeness.", "a lack of fare.", "a refunded ticket.", "being banned.", "having the incorrect destination.", "not knowing about java."};
        //Allows a random reason to be used for why the passenger was booted of the plane.
        boolean checkIfFound=trainPassengers.contains(preventer); //A boolean that checks if the passenger is withing trainPassengers is made.
        if (checkIfFound)  //If such a value is found this will run.

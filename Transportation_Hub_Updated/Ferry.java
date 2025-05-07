@@ -10,16 +10,17 @@
 import java.util.*; //java util package imported.
 public class Ferry extends Hub implements Transport //A public class called ferry that extends hub and implements transport is made.
 { //Start of the class Ferry.
-    private String manufacturer, captain, pilot, route, condition; //Several private string objects are made.
+    private String manufacturer, captain, pilot, route, condition, type; //Several private string objects are made.
     private int capacity, fuel, boatRegistration, minimum; //Several integer objects are made.
     @Override //The transport setStringDescriptors method is overriden.
-    public void setStringDescriptors(String manufacturer, String captain, String pilot, String route, String condition) //setStringMethod has its parameters defined.
+    public void setStringDescriptors(String manufacturer, String captain, String pilot, String route, String condition, String type) //setStringMethod has its parameters defined.
     { //Start of the setStringDescriptors method.
       this.manufacturer=manufacturer; //Stores the passed in manufacturer as being the object manufacturer.
       this.captain=captain;//Stores the passed in captain as being the object captain.
       this.pilot=pilot;//Stores the passed in pilot as being the object pilot.
       this.route=route;//Stores the passed in route as being the object route.
       this.condition=condition;//Stores the passed in condition as being the object .
+      this.type=type;//Stores the passed in condition as being the object .
     } //End of the setStringDescriptors method.
     @Override //setIntegerDescriptors method is overriden.
     public void setIntegerDescriptors(int fuel, int capacity, int boatRegistration)  //setIntegerDescriptors has its parameters formaly defined.
@@ -31,7 +32,7 @@ public class Ferry extends Hub implements Transport //A public class called ferr
      @Override //toString method is overriden.
     public String toString() //toString method is declared.
     { //Start of the toString method.
-        return "\n\nManufacturer: " + manufacturer + "." + "\nCondition: " + condition + "." 
+        return "\n\nType: " + type +"\nManufacturer: " + manufacturer + "." + "\nCondition: " + condition + "." 
         + "\nRegistration Number: " + boatRegistration + "." + "\nFuel: "  + fuel + " gallons of gasoline/diesel/mixed fuel." + "\nRoute: " + route + "." 
         + "\nCaptain: " + captain + "."+ "\nCopilot: " + pilot + "." + "\nSouls on Board: " + capacity + ".";
         //The appropriate objects are returned to allow the linkedlist to work.
@@ -40,7 +41,7 @@ public class Ferry extends Hub implements Transport //A public class called ferr
     { //Start of removePassenger method.
        Integer preventer=passenger; //MUST BE CAST AS NONPRIMITVE OTHERWISE WEIRD ERROR WHERE INDEX RATHER THAN VALUE IS REMOVED!
        Random pickReason=new Random(); //A new random object is created.
-       String [] randomReasons={"unruly behavior", "drunkeness", "lack of fare", "refunded ticket", "ban", "incorrect destination", "not knowing about java"};
+       String [] randomReasons={"unruly behavior.", "drunkeness.", "a lack of fare.", "a refunded ticket.", "being bannned.", "having the incorrect destination.", "not knowing about java."};
        //Allows a random reason to be used for why the passenger was booted of the plane.
        boolean checkIfFound=boatPassengers.contains(preventer); //A boolean that checks if the passenger is withing boatPassengers is made.
        if (checkIfFound)  //If such a value is found this will run.

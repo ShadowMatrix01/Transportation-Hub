@@ -10,16 +10,17 @@
 import java.util.*; //java util package imported.
 public class Bus extends Hub implements Transport //Bus class with hub extended and transport implemented is made.
 { //Start of the bus class.
-    private String manufacturer, driver, fareInspector, route, condition, temp;  //private string objects are made.
+    private String manufacturer, driver, fareInspector, route, condition, temp, type;  //private string objects are made.
     private int capacity, fuel, busLicense, minimum; //private integer object are made.
     @Override //setStringDescriptors is overriden.
-    public void setStringDescriptors(String manufacturer, String driver, String fareInspector, String route, String condition) //parameters for setStringDescriptors is defined.
+    public void setStringDescriptors(String manufacturer, String driver, String fareInspector, String route, String condition, String type) //parameters for setStringDescriptors is defined.
     { //Start of the setStringDescriptors method.
        this.manufacturer=manufacturer; //manufacturer passed in set to manufacturer object.
        this.driver=driver;  //driver passed in set to driver object.
        this.fareInspector=fareInspector;  //fareInspector passed in set to fareInspector object.
        this.route=route;  //route passed in set to route object.
        this.condition=condition;  //condition passed in set to condition object.
+       this.type=type;//Stores the passed in condition as being the object .
     } //End of the setStringDesciptors method.
     @Override //setIntegerDescriptors method is overriden.
     public void setIntegerDescriptors(int fuel, int capacity, int busLicense)  //setIntegerDescriptors method has its parameters defined.
@@ -31,7 +32,7 @@ public class Bus extends Hub implements Transport //Bus class with hub extended 
     @Override //To string method overriden to allow linkedlist and hashmap to work properly.
     public String toString() //toString method declared.
     {//Start of to string method.
-        return "\n\nManufacturer: " + manufacturer + "." + "\nCondition: " + condition + "." 
+        return "\n\nType: " + type + "\nManufacturer: " + manufacturer + "." + "\nCondition: " + condition + "." 
         + "\nBus License: " + busLicense + "." + "\nFuel: "  + fuel + " gallons of Diesel fuel." + "\nRoute: " + route + "." 
         + "\nDriver: " + driver + "."+ "\nFare Inspector: " + fareInspector + "." + "\nPassengers: " + capacity + ".";
         //The data that was passed in is returned to be added to the linkedlist and hashmap.
@@ -40,7 +41,7 @@ public class Bus extends Hub implements Transport //Bus class with hub extended 
     { //Start of removePassenger method.
        Integer preventer=passenger; //MUST BE CAST AS NONPRIMITVE OTHERWISE WEIRD ERROR WHERE INDEX RATHER THAN VALUE IS REMOVED!
        Random pickReason=new Random(); //A new random object is created.
-       String [] randomReasons={"unruly behavior", "drunkeness", "lack of fare", "refunded ticket", "ban", "incorrect destination", "not knowing about java"};
+       String [] randomReasons={"unruly behavior.", "drunkeness.", "a lack of fare.", "a refunded ticket.", "being banned.", "having the incorrect destination.", "not knowing about java."};
        //Allows a random reason to be used for why the passenger was booted of the bus.
        boolean checkIfFound=busPassengers.contains(preventer); //A boolean that checks if the passenger is withing busPassengers is made.
        if (checkIfFound)  //If such a value is found this will run.

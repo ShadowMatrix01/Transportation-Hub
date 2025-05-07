@@ -34,6 +34,7 @@ public class Hub //A class called hub is made.
         if (input==1) //An if statement made to run if input is equal to 1.
         { //Start of the if statement.
             ArrayList<String> luggageToAdd=new ArrayList<>(); //ArrayList luggageToAdd is made
+            ArrayList<Integer> airplanePassengers=new ArrayList<>(); //A new arrayList called airplane passengers is made.
             type="AIRPLANE"; //Type is assigned to airplane.
             Airplane plane=new Airplane(); //A new airplane object called plane is made.
             Stack<Integer> toUnloadPlane=new Stack<>(); //A stack of integers called toUnloadPlane is made.
@@ -125,7 +126,30 @@ public class Hub //A class called hub is made.
             { //Start of while loop.
                 System.out.println("Group " + passengerBoard.remove() + " may now board the plane."); //The group at the front of the queue is repeadtly printed to the console.
             } //End of while loop.
-            plane.setStringDescriptors(manufacturer, captain, copilot, route, condition); //manufacturer, captain, copilot, route, and conition passed in to setStringDescriptors method.
+            for (int i=1; i<=capacity; i++)  //A for loop that runs for the capacity inputed is made.
+            { //Start of the for loop.
+                airplanePassengers.add(i); //i is added to the airplanePassengers arrayList.
+            } //End of for loop.
+               while (true) //While loop declared.
+               {// Start of while loop.
+               System.out.println("Would you like to remove a passenger? (Enter Y or N)"); //Asks the user if they would like to remove a passenger.
+               String removeChoice=desc.nextLine(); //Stores the user's input.
+               if (removeChoice.equalsIgnoreCase("Y")) //If the input is equal to y, this is executed. 
+               { //Start of if statement.
+                   for (int i=0; i<airplanePassengers.size(); i++)  //A for loop that runs for the size of the arraylist is made.
+                   { //Start of the for loop.
+                       System.out.println("Passenger # " + airplanePassengers.get(i)); //All passengers are printed out.
+                   } //End of for loop.
+                   System.out.println("Who would you like to remove? Enter an integer, please."); //Asks the user who they would like to remove.
+                   int remover=desc.nextInt(); //Stores the user's input.
+                   plane.removePassenger(remover, airplanePassengers); //passes in the value to remove aswell as the arraylist.
+                   desc.nextLine(); //Scanner input rejected,
+                } else //End of if statement. Else statement declared.
+               { //Start of else statement.
+                   break; //While loop broken.
+               } //End of for loop.
+             } //End of while loop.
+            plane.setStringDescriptors(manufacturer, captain, copilot, route, condition, type); //manufacturer, captain, copilot, route, type, and conition passed in to setStringDescriptors method.
             plane.setIntegerDescriptors(fuel, capacity, airRegistration); //fuel, capacity, and airRegistration passed in to setIntegerDescriptors method.
             placeHolder.add(plane);//The plane's to string contents are added to the linkedlist.
             plane.selectionSortAirplaneLuggage(luggageToAdd);//luggageToAdd arraylist passed in to plane's selectionSortAirplaneLuggage method.
@@ -134,8 +158,8 @@ public class Hub //A class called hub is made.
             String lunchTime=desc.nextLine();//Input for lunch is read from the user.
             if (lunchTime.equalsIgnoreCase("Y")) //If lunchtime is equal to Y or y, this executes.
              { //Start of if statement.
-                System.out.println("Would you like to serve lunch to the passengers on the plane, or to the crew (stewards, pilots, crew etc.)? Type 1 for passengers, type 2 for passengers.");
-                int lunchForWho=desc.nextInt();
+                System.out.println("Would you like to serve lunch to the passengers on the plane, or to the crew (stewards, pilots, crew etc.)? Type 1 for passengers, type 2 for passengers."); //Asks the user for input.
+                int lunchForWho=desc.nextInt(); //Stores the user's input.
                 if (lunchForWho==1) //if lunch for who is equal to 1, this will run.
                 { //Start of the if statement.
                 plane.lunchService(capacity); //plane's lunchservice method has capacity passed in.
@@ -145,7 +169,7 @@ public class Hub //A class called hub is made.
                     ArrayList<String> crew=new ArrayList<>(); //An arrayList called crew which accepts strings is made.
                     while (true) //As long as the input is not stop, this will run.
                     { //Start of the while loop.
-                        System.out.println("Enter the names of the crew members to serve lunch to (first names only)."); //Tells the user to input the crew's name.
+                        System.out.println("Enter the names of the crew members to serve lunch to (first names only). Stop to quit."); //Tells the user to input the crew's name.
                         lunch_two=desc.nextLine(); //lunch two accepts input.
                         if (lunch_two.equalsIgnoreCase("Stop")) { //if lunch two is equal to stop this will run. Start of if statement.
                             break; //While loop broken.
@@ -164,9 +188,9 @@ public class Hub //A class called hub is made.
                     System.out.println("" + owners + " gets their luggage!"); //Tells which owners have gotten their luggage.
                 } //End of the for loop.
             } //End of if statement.
+            desc.nextLine(); //To clear the scanner.
             System.out.println("The plane has landed! Would you like to see the cargo being unloaded? (Enter Y or N)\n"); //Asks if the user wants to see the cargo being loaded.
             String process_two=desc.nextLine(); //Stores the user's input.
-            
             if (process_two.equalsIgnoreCase("Y")) //If process_two is equal to Y or y this executes.
             { //Start of the if statement.
             System.out.println("\nCargo will be unloaded now, due to how loading cargo works, the cargo that went in first will come out last!");
@@ -233,7 +257,7 @@ public class Hub //A class called hub is made.
             System.out.println("Enter the amount of passengers onboard");//Asks the user for passengers.
             int capacity=trainScan.nextInt();//User input stored.
             trainScan.nextLine();//Scanner cleared of input.
-            System.out.println("Enter the owners of the luggage on the plane (Last Name, First Name). It will be sorted. (Enter Stop to Quit)");//Asks the user for the owners.
+            System.out.println("Enter the owners of the luggage on the train (Last Name, First Name). It will be sorted. (Enter Stop to Quit)");//Asks the user for the owners.
             while (true) { //Allows luggage to be added with the owners names. Start of while loop.
                 String luggage=desc.nextLine();//Stores the users input for luggage.
                 if (luggage.equalsIgnoreCase("Stop")) //If the input is stop, this will run. 
@@ -255,7 +279,7 @@ public class Hub //A class called hub is made.
                 passengerBoardTrain.add(board); //board is added to passengerBoard queue.
                 } //End of else statement.
             } //End of while loop.
-            locomotive.setStringDescriptors(manufacturer, engineer, conductor, route, condition); //theStringDescriptors has its parameters passed in.
+            locomotive.setStringDescriptors(manufacturer, engineer, conductor, route, condition, type); //theStringDescriptors has its parameters passed in.
             locomotive.setIntegerDescriptors(fuel, capacity, journeyNumber);//theIntegerDescriptors has its parameters passed in.
             locomotive.selectionSortTrainLuggage(luggageToAddTrain);//theSelectionSortTrainLuggage has its parameter passed in.
             placeHolder.add(locomotive); //locomotive added to the placeholder linkedlist.
@@ -297,16 +321,17 @@ public class Hub //A class called hub is made.
                 } //End of for loop.
                 System.out.println("The train has arrived at the depot! Returning to the menu..."); //Tells the user they are returning to the menu.
             } //End of the if statement.
-            } catch (InputMismatchException e) {
-                trainScan.nextLine();
-            }
+            } catch (InputMismatchException e) { //End of try statement. If theres an exception, this will run. Start of the catch statement.
+                System.out.println("Invalid input, taking you back to the program."); //User is told they inputted an invalid input.
+                trainScan.nextLine(); //Scanner cleared of input.
+            } //End of catch statement.
             } //End of else if statement. 
             else if (input==3)  //If the input is 3, this will execute.
             { //Start of the else if statement.
               type="FERRY"; //Type is assigned to ferry.
               Ferry ship=new Ferry(); //A new ferry instance called ship is made.
               Queue<String> passengerBoardBoat= new LinkedList<>(); //A queue of strings called passengerBoardBoat is made, it will be a linkedlist.
-              Scanner ferryDetails=new Scanner(System.in);
+              Scanner ferryDetails=new Scanner(System.in); //A new scanner called ferryDetails is made.
               ArrayList<Integer> boatPassengers=new ArrayList<>(); //A new arraylist that stores Integers  is made.
               try { //A try statement is made, start of try statement,
                 System.out.println("Enter the manufacturer of the boat. Example: Boston Whaler"); //Tells the user to input the appropriate data.
@@ -315,8 +340,8 @@ public class Hub //A class called hub is made.
                 String captain=ferryDetails.nextLine();//Stores the user's captain input.
                 System.out.println("Enter the full name of the pilot (last name, first name)");//Tells the user to input the appropriate data.
                 String pilot=ferryDetails.nextLine();//Stores the user's pilot input.
-                System.out.println("Where will the boat dock at?");
-                String dock=ferryDetails.nextLine();
+                System.out.println("Where will the boat dock at?"); //Asks the user where the boat will dock at.
+                String dock=ferryDetails.nextLine();//Stores the user's dock inout.
                 System.out.println("Enter the route (Example: Greenwich, Connecticut, U.S.A. to Warwick, Rhode Island, U.S.A.)");//Tells the user to input the appropriate data.
                 String route=ferryDetails.nextLine();//Stores the user's route input.
                 System.out.println("Enter the condition of the boat");//Tells the user to input the appropriate data.
@@ -353,7 +378,7 @@ public class Hub //A class called hub is made.
                 passengerBoardBoat.add(board); //Users input is added to passengerBoardBoat queue.
                 } //End of else statement.
             } //End of while loop.
-            ship.setStringDescriptors(manufacturer, captain, pilot, route, condition); //manufacturer, captain, pilot, route, and conition passed in to setStringDescriptors method.
+            ship.setStringDescriptors(manufacturer, captain, pilot, route, condition, type); //manufacturer, captain, pilot, route, type, and conition passed in to setStringDescriptors method.
             ship.setIntegerDescriptors(fuel, capacity, boatRegistration); //fuel, capacity, and boatRegistration passed in to setIntegerDescriptors method.
             placeHolder.add(ship);//The ship's to string contents are added to the linkedlist.
             lookUp.put(boatRegistration, ship); //boatRegistraion key and plane value is set to the lookup hashmap.
@@ -383,10 +408,11 @@ public class Hub //A class called hub is made.
                { //Start of else statement.
                    break; //While loop broken.
                } //End of for loop.
-            }
+            } //End of while loop.
             } catch (InputMismatchException e) //End of try statement. 
             { //Start of catch statement.
-                  ferryDetails.nextLine(); //Scanner input rejected.
+                System.out.println("Invalid input, taking you back to the program."); //User is told they inputted an invalid input.
+                ferryDetails.nextLine(); //Scanner input rejected.
             } //End of catch statement.
             } //End of else if statement.
             else if (input==4) //If the input is 4, this will be executed.
@@ -403,8 +429,8 @@ public class Hub //A class called hub is made.
                String driver=busDetails.nextLine();//Stores the user's driver input.
                System.out.println("Enter the full name of the fare inspector (last name, first name)");//Tells the user to input the appropriate data.
                String fareInspector=busDetails.nextLine();//Stores the user's pilot input.
-               System.out.println("Which terminal will the bus unload at?");//Aks the user which terminal the bus will unload at.
-               String terminal=busDetails.nextLine();
+               System.out.println("Which terminal will the bus unload at?");//Ask the user which terminal the bus will unload at.
+               String terminal=busDetails.nextLine(); //Stores the terminal input.
                System.out.println("Enter the route (Example: El Paso, Texas, U.S.A. to Sacramento, California, U.S.A.)");//Tells the user to input the appropriate data.
                String route=busDetails.nextLine();//Stores the user's route input.
                System.out.println("Enter the condition of the bus");//Tells the user to input the appropriate data.
@@ -429,7 +455,7 @@ public class Hub //A class called hub is made.
                System.out.println("Enter the amount of passengers onboard"); //Tells the user to input passengers.
                int capacity=busDetails.nextInt();//Stores the user's capacity input.
                busDetails.nextLine(); //scanner cleared of input.
-               autobus.setStringDescriptors(manufacturer, driver, fareInspector, route, condition); //manufacturer, driver, fareInspector, route, and conition passed in to setStringDescriptors method.
+               autobus.setStringDescriptors(manufacturer, driver, fareInspector, route, condition, type); //manufacturer, driver, fareInspector, route, type, and conition passed in to setStringDescriptors method.
                autobus.setIntegerDescriptors(fuel, capacity, busRegistration); //fuel, capacity, and busRegistration passed in to setIntegerDescriptors method.
                placeHolder.add(autobus);//The bus to string contents are added to the linkedlist.
                lookUp.put(busRegistration, autobus); //busRegistraion key and plane value is set to the lookup hashmap.
@@ -481,11 +507,12 @@ public class Hub //A class called hub is made.
                } //End of while loop.
                System.out.println("The bus has arrived at: " + terminal + "!"); //Tells the user the bus has arrived.
                } catch (InputMismatchException e) { //End of the try statement. A catch statement to handle exceptions is made, start of the catch statement.
-                  busDetails.nextLine(); //Scanner input is rejected.
+                   System.out.println("Invalid input, taking you back to the program."); //User is told they inputted an invalid input.
+                   busDetails.nextLine(); //Scanner input is rejected.
                }//End of catch statement.
             } else if (input==5) //End of else if statement. If the input is 5, this will run.
             { //Start of else if statement.
-                Scanner dataSetLookup=new Scanner(System.in);
+                Scanner dataSetLookup=new Scanner(System.in); //A new scanner called dataSetLookUp is made.
                 System.out.println("Enter the registration or license number of the route you wish to lookup"); //Asks the user what route they would like to lookup.
                 try { //Try statement is declared. Start of try statement,
                 int check=dataSetLookup.nextInt(); //User input stored to check object.
@@ -499,6 +526,7 @@ public class Hub //A class called hub is made.
                 } //End of else statement.
             } catch (InputMismatchException e) //End of try statement. If an exception happens this will run.
             { //Start of the catch statement.
+                System.out.println("Invalid input, taking you back to the program."); //User is told they inputted an invalid input.
                 dataSetLookup.nextLine(); //Scanner is cleared of input.
             } //End of the catch statement.
         } else //End of else if statement. Otherwise, this will be runned.
@@ -517,6 +545,7 @@ public class Hub //A class called hub is made.
             break; //While loop broken.
         } //End of else statement.
       } catch (InputMismatchException e) { //End of try statement, catch declared and will run if exception occurs. Start of catch statement.
+          System.out.println("Invalid input, taking you back to the program."); //User is told they inputted an invalid input.
           desc.nextLine(); //Scanner input rejected.
       } //End of catch statement.
      } //End of while loop.

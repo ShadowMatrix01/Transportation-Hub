@@ -9,8 +9,8 @@
  */
 public interface Transport //An interface called transport which all vehicle classes will implement is made.
 { //Start of interface transport.
-    void setStringDescriptors(String manufacturer, String operator_one, String operator_two, String route, String condition);
-    //setStringDescriptors which has 5 parameters must be overriden.
+    void setStringDescriptors(String manufacturer, String operator_one, String operator_two, String route, String condition, String type);
+    //setStringDescriptors which has 6 parameters must be overriden.
     void setIntegerDescriptors(int fuel, int capacity, int licenseNumber);
     //setIntegerDescriptors which has 3 parameters must be overriden.
 } //End of interface transport.
