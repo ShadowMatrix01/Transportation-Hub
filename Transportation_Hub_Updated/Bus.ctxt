@@ -1,7 +1,11 @@
 #BlueJ class context
 comment0.target=Bus
-comment1.params=manufacturer\ driver\ fare_inspector\ route\ condition
+comment1.params=manufacturer\ driver\ fareInspector\ route\ condition
 comment1.target=void\ setStringDescriptors(java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String)
 comment2.params=fuel\ capacity\ busLicense
 comment2.target=void\ setIntegerDescriptors(int,\ int,\ int)
-numComments=3
+comment3.params=
+comment3.target=java.lang.String\ toString()
+comment4.params=passenger\ busPassengers
+comment4.target=int\ removePassenger(int,\ java.util.ArrayList)
+numComments=5
